@@ -34,7 +34,7 @@ describe('Scenarios where authentication is a pre-requirement', () => {
     })
   })
 
-  it.only('logs out', () => {
+  it('logs out', () => {
     cy.visit('/')
     cy.wait('@getNotes')
     if (Cypress.config('viewportWidth') < Cypress.env('viewportWidthBreakpoint')) {
