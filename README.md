@@ -2,6 +2,8 @@
 
 Sample project to demonstrate end-to-end (e2e) tests written with Cypress running on a CI service.
 
+[![e2e-tests](https://github.com/BrunoFBarbosa/testes-e2e-com-cypress/actions/workflows/ci.yml/badge.svg)](https://github.com/BrunoFBarbosa/testes-e2e-com-cypress/actions/workflows/ci.yml)
+
 ## Pre-requirements
 
 To run this project, you will need:
