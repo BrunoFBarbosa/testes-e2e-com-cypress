@@ -1,7 +1,7 @@
 {
   "name": "testes-e2e-com-cypress",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sample project to demonstrate Cypress E2E tests",
   "main": "index.js",
   "scripts": {
     "lint": "eslint cypress/**/*.js",
@@ -12,8 +12,8 @@
     "test:tablet": "cypress run --config viewportWidth=767,viewportHeight=480 --spec cypress/integration/authenticatedScenarios.spec.js --env grepTags=@desktop-and-tablet"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Bruno Felippe Barbosa <brunofbarbosa@outlook.com.br>",
+  "license": "MIT",
   "devDependencies": {
     "cypress": "^8.2.0",
     "cypress-file-upload": "^5.0.8",
