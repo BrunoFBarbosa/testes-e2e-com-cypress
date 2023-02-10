@@ -27,12 +27,9 @@ jobs:
         uses: cypress-io/github-action@v2
         env:
           CYPRESS_USER_EMAIL: ${{ secrets.CYPRESS_USER_EMAIL }}
-          CYPRESS_USER_PASSWORD: ${{ 
-secrets.CYPRESS_USER_PASSWORD }}
-          CYPRESS_MAILOSAUR_SERVER_ID: ${{ 
-secrets.CYPRESS_MAILOSAUR_SERVER_ID }}
-          CYPRESS_MAILOSAUR_API_KEY: ${{ 
-secrets.CYPRESS_MAILOSAUR_API_KEY }}
+          CYPRESS_USER_PASSWORD: ${{ secrets.CYPRESS_USER_PASSWORD }}
+          CYPRESS_MAILOSAUR_SERVER_ID: ${{ secrets.CYPRESS_MAILOSAUR_SERVER_ID }}
+          CYPRESS_MAILOSAUR_API_KEY: ${{ secrets.CYPRESS_MAILOSAUR_API_KEY }}
         with:
           command: npm test
   cypress-tests-tablet:
@@ -47,7 +44,6 @@ secrets.CYPRESS_MAILOSAUR_API_KEY }}
         uses: cypress-io/github-action@v2
         env:
           CYPRESS_USER_EMAIL: ${{ secrets.CYPRESS_USER_EMAIL }}
-          CYPRESS_USER_PASSWORD: ${{ 
-secrets.CYPRESS_USER_PASSWORD }}
+          CYPRESS_USER_PASSWORD: ${{ secrets.CYPRESS_USER_PASSWORD }}
         with:
           command: npm run test:tablet
