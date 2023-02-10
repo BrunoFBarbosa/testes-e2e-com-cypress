@@ -1,4 +1,4 @@
-name: ci
+name: e2e-tests
 
 on:
   push:
