@@ -25,32 +25,32 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('fillSignupFormAndSubmit', (email, password) => {
-    cy.visit('/signup')
-    cy.get('#email').type(email)
-    cy.get('#password').type(password, { log: false })
-    cy.get('#confirmPassword').type(password, { log: false })
-    cy.contains('button', 'Signup').click()
-    cy.get('#confirmationCode').should('be.visible')
+  cy.visit('/signup')
+  cy.get('#email').type(email)
+  cy.get('#password').type(password, { log: false })
+  cy.get('#confirmPassword').type(password, { log: false })
+  cy.contains('button', 'Signup').click()
+  cy.get('#confirmationCode').should('be.visible')
 })
 
 Cypress.Commands.add('login', (
-    username = Cypress.env('USER_EMAIL'),
-    password = Cypress.env('USER_PASSWORD'),
-    { cacheSession = true } = {}
-  ) => {
-    const login = () => {
-      cy.visit('/login')
-      cy.get('#email').type(username)
-      cy.get('#password').type(password, { log: false })
-      cy.contains('button', 'Login').click()
-      cy.contains('h1', 'Your Notes', {timeout: 10000}).should('be.visible')
-    }
-  
-    if (cacheSession) {
-      cy.session([username, password], login)
-    } else {
-      login()
-    }
+  username = Cypress.env('USER_EMAIL'),
+  password = Cypress.env('USER_PASSWORD'),
+  { cacheSession = true } = {}
+) => {
+  const login = () => {
+    cy.visit('/login')
+    cy.get('#email').type(username)
+    cy.get('#password').type(password, { log: false })
+    cy.contains('button', 'Login').click()
+    cy.contains('h1', 'Your Notes', {timeout: 10000}).should('be.visible')
+  }
+
+  if (cacheSession) {
+    cy.session([username, password], login)
+  } else {
+    login()
+  }
 })
 
 const attachFileHandler = () => cy.get('#file').attachFile('example.json')
@@ -72,7 +72,7 @@ Cypress.Commands.add('editNote', (noteDescription, updatedNoteDescription, attac
   cy.contains('.list-group-item', noteDescription)
     .should('be.visible')
     .click()
-  
+
   cy.wait('@getNote')
   cy.get('#content')
     .clear()
